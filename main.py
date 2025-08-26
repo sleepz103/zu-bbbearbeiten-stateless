@@ -1,3 +1,4 @@
+from datetime import date
 import helper
 from flask import Flask, request, Response, render_template, redirect, url_for
 app = Flask(__name__)
@@ -11,7 +12,7 @@ def index():
 @app.route('/add', methods=["POST"])
 def add():
     text = request.form.get("text")
-    helper.add(text)
+    helper.add(text, date)
     return redirect(url_for("index"))
 
 

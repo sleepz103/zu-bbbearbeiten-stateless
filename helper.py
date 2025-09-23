@@ -31,6 +31,7 @@ def update(index):
 def get_csv():
     lines = []
     for item in items:
-        line = f"{item.text},{item.date},{item.isCompleted}"
+        date_str = item.date.strftime("%Y-%m-%d")
+        line = f"{item.text},{date_str},{item.isCompleted}"
         lines.append(line)
     return "\n".join(lines)

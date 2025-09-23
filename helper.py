@@ -26,3 +26,10 @@ def get(index):
 
 def update(index):
     items[index].isCompleted = not items[index].isCompleted
+
+def get_csv():
+    lines = []
+    for item in items:
+        line = f"{item.text},{item.date},{item.isCompleted}"
+        lines.append(line)
+    return "\n".join(lines)

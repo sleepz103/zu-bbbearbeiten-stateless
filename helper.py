@@ -13,7 +13,8 @@ class Item:
 
 def add(text, date):
     text = text.replace('b', 'bbb').replace('B', 'Bbb')
-    items.append(Item(text, date))
+    date_obj = datetime.datetime.strptime(date, "%Y-%m-%d").date()
+    items.append(Item(text, date_obj))
 
 
 def get_all():

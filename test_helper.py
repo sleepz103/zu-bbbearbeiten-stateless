@@ -15,6 +15,7 @@ def test_add():
     item = helper.items[-1]
     assert isinstance(item.date, datetime.date)
 
+
 def test_get_csv():
     # Given: I have a to-do item
     text = "Lorem ipsum"
